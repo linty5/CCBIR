@@ -84,7 +84,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # General parameters
     parser.add_argument('--load_path', type = str, default = './models/model_name/cbirnet_best.pth', help = 'the load path for trained models')
-    parser.add_argument('--load_com_path', type = str, default = './ccnet_model/ccnet_best.pth', help = 'the load path for trained models')
+    parser.add_argument('--load_com_path', type = str, default = './ccnet_model/ccnet_best_resnet50.pth', help = 'the load path for trained models')
     parser.add_argument('--net_type', type = str, default = 'ImgRetriever', help = 'Used for composition classification')
     # Network parameters
     parser.add_argument('--loss_type', type = str, default = 'comb', help = 'type of loss function')

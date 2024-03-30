@@ -67,7 +67,7 @@ def Retriever(opt, net, com_net):
             pos2_score = cal_cosine_similarity(out_img_origin, out_img_pos2)
             neg1_score = cal_cosine_similarity(out_img_origin, out_img_neg1)
             neg2_score = cal_cosine_similarity(out_img_origin, out_img_neg2)
-            print("pos1_score: ", pos1_score, " pos2_score: ", pos2_score, " neg1_score: ", neg1_score, " neg2_score: ", neg2_score)
+            # print("pos1_score: ", pos1_score, " pos2_score: ", pos2_score, " neg1_score: ", neg1_score, " neg2_score: ", neg2_score)
             pos1_score_list.append(pos1_score)
             pos2_score_list.append(pos2_score)
             neg1_score_list.append(neg1_score)
@@ -110,11 +110,11 @@ if __name__ == "__main__":
     # ----------------------------------------
     parser = argparse.ArgumentParser()
     # General parameters
-    parser.add_argument('--load_path', type = str, default = './models/0204_cbir_resnet50_2/cbirnet_epoch12_batchsize1.pth', help = 'the load path for trained models')
-    parser.add_argument('--load_com_path', type = str, default = './cc_model/ccnet_0129_resnet50_best.pth', help = 'the load path for trained models')
+    parser.add_argument('--load_path', type = str, default = './models/model_name/cbirnet_best.pth', help = 'the load path for trained models')
+    parser.add_argument('--load_com_path', type = str, default = './cc_model/ccnet_best_resnet50.pth', help = 'the load path for trained models')
     parser.add_argument('--net_type', type = str, default = 'ImgRetriever', help = 'Used for composition classification')
     # Network parameters
-    parser.add_argument('--loss_type', type = str, default = 'comb', help = 'type of loss function')
+    parser.add_argument('--loss_type', type = str, default = 'cosine', help = 'type of loss function')
     parser.add_argument('--backbone_type', type = str, default = 'resnet50', help = 'choose the backbone')
     parser.add_argument('--pad', type = str, default = 'zero', help = 'the padding type')
     parser.add_argument('--activ', type = str, default = 'lrelu', help = 'the activation type')

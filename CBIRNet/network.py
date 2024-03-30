@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torchvision.models as models
 import torch.nn.functional as F
+import os
 
 from network_module import *
 import utils
@@ -86,7 +87,7 @@ if __name__ == "__main__":
     parser.add_argument('--activ', type = str, default = 'lrelu', help = 'the activation type')
     parser.add_argument('--norm', type = str, default = 'none', help = 'normalization type')
     parser.add_argument('--net_type', type = str, default = 'ImgRetriever', help = 'Used for composition classification')
-    parser.add_argument('--load_com_path', type = str, default = './cc_model/ccnet_best.pth', help = 'the load path of com models')
+    parser.add_argument('--load_com_path', type = str, default = './cc_model/ccnet_best_resnet50.pth', help = 'the load path of com models')
     parser.add_argument('--load_path', type = str, default = None, help = 'the load path of models')
     parser.add_argument('--comp_types_num', type = int, default = 9, help = 'composition types num')
     parser.add_argument('--kcm_scale', type = int, default = 0.5, help = 'the scale of kcm')
@@ -107,6 +108,8 @@ if __name__ == "__main__":
     print(preds.shape, kcm.shape)
     print(preds)
     
+    if not os.path.exists('./dev_samples'):
+        os.makedirs('./dev_samples')
     file_path = "./dev_samples/preds.pt"
     torch.save(preds, file_path)
     loaded_preds = torch.load(file_path)

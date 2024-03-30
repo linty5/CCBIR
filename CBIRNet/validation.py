@@ -93,11 +93,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # General parameters
     parser.add_argument('--load_path', type = str, default = './models/model_name/cbirnet_best.pth', help = 'the load path for trained models')
-    parser.add_argument('--load_com_path', type = str, default = './cc_model/ccnet_best.pth', help = 'the load path for trained models')
+    parser.add_argument('--load_com_path', type = str, default = './cc_model/ccnet_best_resnet50.pth', help = 'the load path for trained models')
     parser.add_argument('--net_type', type = str, default = 'ImgRetriever', help = 'Used for composition classification')
     parser.add_argument('--sample_val_path', type = str, default = './samples_val', help = 'the save path for validation samples')
+    parser.add_argument('--lambda_l1', type = float, default = 1, help = 'the parameter of L1Loss')
+    parser.add_argument('--lambda_l2', type = float, default = 1, help = 'the parameter of L2Loss')
+    parser.add_argument('--lambda_neg', type = float, default = 1, help = 'the parameter of negative samples')
+    parser.add_argument('--lambda_triplet', type = float, default = 1, help = 'the parameter of tripletloss')
     # Network parameters
-    parser.add_argument('--loss_type', type = str, default = 'comb', help = 'type of loss function')
+    parser.add_argument('--loss_type', type = str, default = 'cosine', help = 'type of loss function')
     parser.add_argument('--backbone_type', type = str, default = 'resnet50', help = 'choose the backbone')
     parser.add_argument('--start_channels', type = int, default = 128, help = 'latent channels')
     parser.add_argument('--pad', type = str, default = 'zero', help = 'the padding type')

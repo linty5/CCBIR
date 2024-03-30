@@ -127,7 +127,7 @@ if __name__ == "__main__":
                 
                 cv2.imwrite(f"dev_samples/original_{loader_name.lower()}.png", data[0])
 
-    for batch_idx, (data, _, _) in enumerate(test_loader):
+    for batch_idx, data in enumerate(test_loader):
         if batch_idx == 9:
             print(f"Test Batch Index: {batch_idx}")
 
