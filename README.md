@@ -2,7 +2,7 @@
 
 This is the official webpage of the paper "Enhancing Historical Image Retrieval with Compositional Cues", accepted to AIRoV – The First Austrian Symposium on AI, Robotics, and Vision
 
-Arxiv: https://arxiv.org/abs/2403.14287
+Link: https://www.uibk.ac.at/iup/buch_pdfs/airov_2023/10.15203-99106-150-2-34.pdf
 
 **News**:
 
@@ -105,14 +105,19 @@ Please use select_frames.py to build your own dataset.
 
 ## 5 Citation
 
-If you find this work useful for your research, please cite arxiv version:
+If you find this work useful for your research, please cite:
 
 ```bash
-@article{lin2024enhancing,
+@inproceedings{lin2024enhancing,
   title={Enhancing Historical Image Retrieval with Compositional Cues},
   author={Lin, Tingyu and Sablatnig, Robert},
-  journal={arXiv preprint arXiv:2403.14287},
-  year={2024}
+  booktitle={Proceedings of the First Austrian Symposium on AI, Robotics, and Vision (AIRoV 2024)},
+  pages={352--359},
+  year={2024},
+  publisher={Innsbruck University Press},
+  doi={10.15203/99106-150-2-34},
+  isbn={978-3-99106-150-2},
+  url={https://www.uibk.ac.at/iup/buch_pdfs/airov_2023/10.15203-99106-150-2-34.pdf}
 }
 ```
 
